@@ -48,16 +48,13 @@ namespace geneticInformationSystem.modules {
             int rInt;
             string c;
             for (int i= 0; i<=length; i++) {
-                //r = new Random();
                 rInt = r.Next(101);
                 if (rInt > selectorBorderPercentage) {//select literal
-                    //r = new Random();
                     rInt = r.Next(0, numInputs);
                     c = inputBases[rInt];
                     DNA.Append(c);
                 }
                 else {//select operator
-                    //r = new Random();
                     rInt = r.Next(0, 3);
                     c = operatorBases[rInt];
                     DNA.Append(c);

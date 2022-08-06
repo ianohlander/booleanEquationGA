@@ -31,3 +31,15 @@ C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\bo
 C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\booleanEvolution\geneticInformationSystem\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
 C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\booleanEvolution\geneticInformationSystem\obj\Debug\geneticInformationSystem.csproj.AssemblyReference.cache
 C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\booleanEvolution\geneticInformationSystem\obj\Debug\geneticInformationSystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\geneticInformationSystem\bin\Debug\geneticInformationSystem.exe.config
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\geneticInformationSystem\bin\Debug\geneticInformationSystem.exe
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\geneticInformationSystem\bin\Debug\geneticInformationSystem.pdb
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\geneticInformationSystem\bin\Debug\Microsoft.Msagl.dll
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\geneticInformationSystem\bin\Debug\Microsoft.Msagl.Drawing.dll
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\geneticInformationSystem\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\geneticInformationSystem\obj\Debug\geneticInformationSystem.csproj.AssemblyReference.cache
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\geneticInformationSystem\obj\Debug\geneticInformationSystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\geneticInformationSystem\obj\Debug\geneticInformationSystem.csproj.CoreCompileInputs.cache
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\geneticInformationSystem\obj\Debug\geneticInformationSystem.csproj.CopyComplete
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\geneticInformationSystem\obj\Debug\geneticInformationSystem.exe
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\geneticInformationSystem\obj\Debug\geneticInformationSystem.pdb
