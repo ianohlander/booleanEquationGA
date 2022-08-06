@@ -16,11 +16,14 @@ namespace geneticInformationSystem.modules {
             get { 
                 return numInputs; 
             } 
-            set { 
-                numInputs = value;
-                inputBases = new string[numInputs];
-                for (int i = 0; i < numInputs; i++) {
-                    inputBases[i] = Convert.ToChar(asciiA + i).ToString();
+            set {
+                //cannot have more than a-z as inputs
+                if (value < 27) {
+                    numInputs = value;
+                    inputBases = new string[numInputs];
+                    for (int i = 0; i < numInputs; i++) {
+                        inputBases[i] = Convert.ToChar(asciiA + i).ToString();
+                    }
                 }
             } 
         }
@@ -28,9 +31,9 @@ namespace geneticInformationSystem.modules {
         public DNAGenerator(int len, double selPer, int inputs) {
             length = len;
             selectorBorderPercentage = selPer;
-            numInputs = inputs;
-            inputBases = new string[numInputs];
-            for (int i = 0; i < numInputs; i++) {
+            NumInputs = inputs;
+            inputBases = new string[NumInputs];
+            for (int i = 0; i < NumInputs; i++) {
                 inputBases[i] = Convert.ToChar(asciiA + i).ToString();
             }
         }
@@ -44,18 +47,23 @@ namespace geneticInformationSystem.modules {
             Random r = new Random();
             int rInt;
             string c;
-            for (int i= 0; i<=length; i++) {
-                rInt = r.Next(101);
-                if (rInt > selectorBorderPercentage) {//select literal
-                    rInt = r.Next(0, numInputs);
-                    c = inputBases[rInt];
-                    DNA.Append(c);
+            if (NumInputs > 0) {
+                for (int i = 0; i <= length; i++) {
+                    rInt = r.Next(101);
+                    if (rInt > selectorBorderPercentage) {//select literal
+                        rInt = r.Next(0, NumInputs);
+                        c = inputBases[rInt];
+                        DNA.Append(c);
+                    }
+                    else {//select operator
+                        rInt = r.Next(0, 3);
+                        c = operatorBases[rInt];
+                        DNA.Append(c);
+                    }
                 }
-                else {//select operator
-                    rInt = r.Next(0, 3);
-                    c = operatorBases[rInt];
-                    DNA.Append(c);
-                }
+            }
+            else {
+                DNA.Append("Must have between 1 and 26 inputs.");
             }
             return DNA.ToString();
         }
