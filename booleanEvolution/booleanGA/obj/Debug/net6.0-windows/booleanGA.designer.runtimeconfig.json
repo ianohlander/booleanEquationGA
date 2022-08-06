@@ -1,0 +1,13 @@
+{
+  "runtimeOptions": {
+    "tfm": "net6.0",
+    "additionalProbingPaths": [
+      "C:\\Users\\ianoh\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\ianoh\\.nuget\\packages",
+      "C:\\Microsoft\\Xamarin\\NuGet"
+    ],
+    "configProperties": {
+      "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
+    }
+  }
+}

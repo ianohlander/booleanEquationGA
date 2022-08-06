@@ -1,0 +1,15 @@
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\bin\Debug\net6.0-windows\booleanGA.exe
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\bin\Debug\net6.0-windows\booleanGA.deps.json
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\bin\Debug\net6.0-windows\booleanGA.runtimeconfig.json
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\bin\Debug\net6.0-windows\booleanGA.dll
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\bin\Debug\net6.0-windows\booleanGA.pdb
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\obj\Debug\net6.0-windows\booleanGA.csproj.AssemblyReference.cache
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\obj\Debug\net6.0-windows\booleanGA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\obj\Debug\net6.0-windows\booleanGA.AssemblyInfoInputs.cache
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\obj\Debug\net6.0-windows\booleanGA.AssemblyInfo.cs
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\obj\Debug\net6.0-windows\booleanGA.csproj.CoreCompileInputs.cache
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\obj\Debug\net6.0-windows\booleanGA.dll
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\obj\Debug\net6.0-windows\refint\booleanGA.dll
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\obj\Debug\net6.0-windows\booleanGA.pdb
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\obj\Debug\net6.0-windows\booleanGA.genruntimeconfig.cache
+C:\Users\ianoh\OneDrive - City of Phoenix\booleanEvolution\booleanGA\obj\Debug\net6.0-windows\ref\booleanGA.dll

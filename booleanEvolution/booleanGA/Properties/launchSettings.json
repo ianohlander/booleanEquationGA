@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "booleanGA": {
+      "commandName": "Project",
+      "commandLineArgs": "lex"
+    }
+  }
+}

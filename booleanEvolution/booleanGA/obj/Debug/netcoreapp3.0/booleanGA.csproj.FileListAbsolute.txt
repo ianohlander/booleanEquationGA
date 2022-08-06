@@ -1,0 +1,11 @@
+D:\booleanEvolution\booleanGA\bin\Debug\netcoreapp3.0\booleanGA.exe
+D:\booleanEvolution\booleanGA\bin\Debug\netcoreapp3.0\booleanGA.deps.json
+D:\booleanEvolution\booleanGA\bin\Debug\netcoreapp3.0\booleanGA.runtimeconfig.json
+D:\booleanEvolution\booleanGA\bin\Debug\netcoreapp3.0\booleanGA.runtimeconfig.dev.json
+D:\booleanEvolution\booleanGA\bin\Debug\netcoreapp3.0\booleanGA.dll
+D:\booleanEvolution\booleanGA\bin\Debug\netcoreapp3.0\booleanGA.pdb
+D:\booleanEvolution\booleanGA\obj\Debug\netcoreapp3.0\booleanGA.csprojAssemblyReference.cache
+D:\booleanEvolution\booleanGA\obj\Debug\netcoreapp3.0\booleanGA.AssemblyInfoInputs.cache
+D:\booleanEvolution\booleanGA\obj\Debug\netcoreapp3.0\booleanGA.AssemblyInfo.cs
+D:\booleanEvolution\booleanGA\obj\Debug\netcoreapp3.0\booleanGA.dll
+D:\booleanEvolution\booleanGA\obj\Debug\netcoreapp3.0\booleanGA.pdb
