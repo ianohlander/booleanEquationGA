@@ -43,8 +43,7 @@ namespace geneticInformationSystem.modules {
 
         public string generateDNA() {
             StringBuilder DNA = new StringBuilder();
-            double typeSelect;
-            Random r= new Random();
+            Random r = new Random();
             int rInt;
             string c;
             for (int i= 0; i<=length; i++) {
