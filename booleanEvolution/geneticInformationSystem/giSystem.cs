@@ -42,7 +42,7 @@ namespace geneticInformationSystem {
                 if (hadError) Environment.Exit(0);
             }
             catch(Exception ex) {
-                Console.WriteLine("Error reading: " + path);
+                Console.WriteLine("Error reading: " + path+" : "+ex.Message);
                 Environment.Exit(0);
             }
         }
@@ -175,7 +175,7 @@ namespace geneticInformationSystem {
                                     output = output + _out;
                                 }
                                 stk.Push(ch);
-                                output = output;
+                                //output = output;
                                 break;
                             case '(':
                                 stk.Push(ch);
@@ -213,7 +213,6 @@ namespace geneticInformationSystem {
 
         public bool postfixToInfix(String exp, out string strResult, out string errMess) {
             Stack s = new Stack();
-            string output = null;
             strResult = null;
             errMess = null;
             bool result = true;

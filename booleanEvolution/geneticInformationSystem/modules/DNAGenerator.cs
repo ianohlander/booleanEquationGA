@@ -8,8 +8,6 @@ namespace geneticInformationSystem.modules {
     public class DNAGenerator {
         private string[] operatorBases = { "+", "*", "!" };
         private string[] inputBases;
-        private double literalPercentage;
-        private double operatorPercentage;
         public double selectorBorderPercentage { get; set; }
         public  int length { get; set; }
         private int asciiA = 65;

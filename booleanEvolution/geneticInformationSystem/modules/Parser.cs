@@ -100,7 +100,7 @@ namespace geneticInformationSystem.modules {
                 }
                 return resultTrees;
             }
-            catch (ParseError error) {
+            catch (ParseError) {
                 return null;
             }
         }
