@@ -24,6 +24,7 @@ namespace giSystemUtilities {
 
             node.setValue(exprroot.value.ToString());
             node.setParentNode(root);
+            node.setType(exprroot.op.type.ToString());
 
             treeNode<string> left = convert(exprroot.left, node);
             treeNode<string> right = convert(exprroot.right, node);

@@ -33,7 +33,12 @@ namespace treeDrawingLibrary {
         }
 
         public ITreeNode<T> getLeftNode() {
-            return leftNode;
+            if (leftNode == null) {
+                return rightNode;
+            }
+            else {
+                return leftNode;
+            }
         }
 
         public float getMod() {
@@ -68,7 +73,11 @@ namespace treeDrawingLibrary {
         }
 
         public bool isLeftNode() {
-            if (this == parentNode.getLeftNode()) {
+            //if this is root (no parent)
+            //OR there is no left node while this is right node
+            //OR this IS the left node
+            //treat as left node
+            if (parentNode == null || parentNode.getLeftNode()==null || this == parentNode.getLeftNode()) {
                 return true;
             }
             return false;

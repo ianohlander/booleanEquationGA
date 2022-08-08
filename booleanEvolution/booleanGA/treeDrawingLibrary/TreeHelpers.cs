@@ -8,12 +8,14 @@ namespace treeDrawingLibrary {
         private static float siblingDistance = 0.0F;
         private static float treeDistance = 0.0F;
         internal static void InitializeNodes<T>(ITreeNode<T> node, int depth) {
-            node.setX(1);
-            node.setY(depth);
-            node.setMod(0);
+            if (node != null) {
+                node.setX(0);
+                node.setY(depth);
+                node.setMod(0);
 
-            InitializeNodes(node.getLeftNode(), depth + 1);
-            InitializeNodes(node.getRightNode(), depth + 1);
+                InitializeNodes(node.getLeftNode(), depth + 1);
+                InitializeNodes(node.getRightNode(), depth + 1);
+            }
         }
 
         internal static void initialAssignX<T>(ITreeNode<T> node) {

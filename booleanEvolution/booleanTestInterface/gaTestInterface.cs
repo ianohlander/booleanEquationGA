@@ -26,11 +26,13 @@ namespace booleanTestInterface {
     public partial class gaTestInterface : Form {
         private BooleanPhenotype phenotype;
         generateTree mgt;
-        
+        treeGenerator treegen;
+
 
         public gaTestInterface() {
             InitializeComponent();
             mgt = new generateTree();
+            treegen = new treeGenerator();
         }
 
         private void pfConvert_Click(object sender, EventArgs e) {
@@ -181,7 +183,7 @@ namespace booleanTestInterface {
                     Expr root = phenotype.expressedASTs[index];
                     treeNode<string> treeRoot = convertExprToTreeNode.convert(root, null);
 
-                    TreeHelpers.
+                    treegen.InitializeNodes(treeRoot);
                 }
             }
         }
