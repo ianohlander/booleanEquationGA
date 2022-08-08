@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="convertExprToTreeNode.cs" />
     <Compile Include="GenerateAST.cs" />
     <Compile Include="generateTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +68,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\booleanGA\treeDrawingLibrary\treeDrawingLibrary.csproj">
+      <Project>{4aad6230-1b9f-46d6-8687-f8228e57b62a}</Project>
+      <Name>treeDrawingLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\geneticInformationSystem\geneticInformationSystem.csproj">
       <Project>{f95e2a02-b865-411b-bb67-bd9e12885cdd}</Project>
       <Name>geneticInformationSystem</Name>

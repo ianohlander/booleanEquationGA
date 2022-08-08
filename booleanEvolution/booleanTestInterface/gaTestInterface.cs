@@ -159,7 +159,6 @@ namespace booleanTestInterface {
                     //astTB.Text=ASTDisplay.print2D(exp, true);
                     //Debug.WriteLine(ASTDisplay.print2D(exp, true));
                 }
-                //astTB.Text = astString.ToString();
             }
             else {
                 statusBar.Text = "No DNA Tokens to Parse.";
@@ -176,7 +175,15 @@ namespace booleanTestInterface {
         }
 
         private void generateTreeButton_Click(object sender, EventArgs e) {
+            int index = astLB.SelectedIndex;
+            if (index != -1) {
+                if (phenotype != null && phenotype.expressedASTs.Count > 0) {
+                    Expr root = phenotype.expressedASTs[index];
+                    treeNode<string> treeRoot = convertExprToTreeNode.convert(root, null);
 
+                    TreeHelpers.
+                }
+            }
         }
     }
 }

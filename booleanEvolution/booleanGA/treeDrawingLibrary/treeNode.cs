@@ -14,10 +14,15 @@ namespace treeDrawingLibrary {
         private string label;
         private T value;
 
-        public treeNode(treeNode<T> left, treeNode<T> right, treeNode<T> parent) {
+        public treeNode(treeNode<T> left, treeNode<T> right, treeNode<T> parent, T value) {
             this.leftNode = left;
             this.rightNode = right;
             this.parentNode = parent;
+            this.value = value;
+        }
+
+        public treeNode() {
+
         }
 
         public void setValue(T _value) {

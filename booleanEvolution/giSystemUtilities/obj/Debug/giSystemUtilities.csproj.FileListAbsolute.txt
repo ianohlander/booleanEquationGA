@@ -28,3 +28,5 @@ C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\re
 C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\giSystemUtilities\obj\Debug\giSystemUtilities.csproj.CopyComplete
 C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\giSystemUtilities\obj\Debug\giSystemUtilities.exe
 C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\giSystemUtilities\obj\Debug\giSystemUtilities.pdb
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\giSystemUtilities\bin\Debug\treeDrawingLibrary.dll
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\giSystemUtilities\bin\Debug\treeDrawingLibrary.pdb

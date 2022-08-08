@@ -72,8 +72,8 @@ namespace giSystemUtilities {
 			}
 			i++;
 			string myname = i + ":" + root.value.ToString();
-			// Process right child first
-			print2DUtilTB(root.right, myname, graph, ref i);
+			// Process left child first
+			print2DUtilTB(root.left, myname, graph, ref i);
 
 			//current node..
 			if (parent != null){
@@ -84,10 +84,9 @@ namespace giSystemUtilities {
             }
 			Node mynode = graph.FindNode(myname);
 			mynode.LabelText = root.value.ToString();
-			//mynode.Attr.Shape = Shape.DrawFromGeometry;
 
-			// Process left child
-			print2DUtilTB(root.left, myname, graph,ref i);
+			// Process right child
+			print2DUtilTB(root.right, myname, graph,ref i);
 		}
 	}
 }

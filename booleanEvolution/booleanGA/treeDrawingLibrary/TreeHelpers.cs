@@ -7,7 +7,7 @@ namespace treeDrawingLibrary {
         private static int nodeSize = 1;
         private static float siblingDistance = 0.0F;
         private static float treeDistance = 0.0F;
-        private static void InitializeNodes<T>(ITreeNode<T> node, int depth) {
+        internal static void InitializeNodes<T>(ITreeNode<T> node, int depth) {
             node.setX(1);
             node.setY(depth);
             node.setMod(0);
@@ -16,7 +16,7 @@ namespace treeDrawingLibrary {
             InitializeNodes(node.getRightNode(), depth + 1);
         }
 
-        private static void initialAssignX<T>(ITreeNode<T> node) {
+        internal static void initialAssignX<T>(ITreeNode<T> node) {
             //POST order traversal: L,R,root
 
             //null check

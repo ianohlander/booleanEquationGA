@@ -44,6 +44,8 @@ namespace booleanTestInterface {
             this.numInputsTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lengthTB = new System.Windows.Forms.TextBox();
+            this.treeDrawTab = new System.Windows.Forms.TabPage();
+            this.generateTreeButton = new System.Windows.Forms.Button();
             this.statusBar = new System.Windows.Forms.Label();
             this.interfaceErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -58,19 +60,17 @@ namespace booleanTestInterface {
             this.label7 = new System.Windows.Forms.Label();
             this.parseButton = new System.Windows.Forms.Button();
             this.evaluateTab = new System.Windows.Forms.TabPage();
-            this.treeDrawTab = new System.Windows.Forms.TabPage();
-            this.generateTreeButton = new System.Windows.Forms.Button();
             this.inputGB.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.manualTab.SuspendLayout();
             this.autoTab.SuspendLayout();
+            this.treeDrawTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.interfaceErrorProvider)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.processTab.SuspendLayout();
             this.lexTab.SuspendLayout();
             this.parseTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treePB)).BeginInit();
-            this.treeDrawTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // inputGB
@@ -165,6 +165,7 @@ namespace booleanTestInterface {
             this.infixTB.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.infixTB.Size = new System.Drawing.Size(632, 35);
             this.infixTB.TabIndex = 0;
+            this.infixTB.Text = "(!x*y)+(x*!y)";
             // 
             // autoTab
             // 
@@ -256,6 +257,27 @@ namespace booleanTestInterface {
             this.lengthTB.TabIndex = 0;
             this.lengthTB.Text = "50";
             this.lengthTB.Validating += new System.ComponentModel.CancelEventHandler(this.lengthTB_Validating);
+            // 
+            // treeDrawTab
+            // 
+            this.treeDrawTab.Controls.Add(this.generateTreeButton);
+            this.treeDrawTab.Location = new System.Drawing.Point(4, 22);
+            this.treeDrawTab.Name = "treeDrawTab";
+            this.treeDrawTab.Padding = new System.Windows.Forms.Padding(3);
+            this.treeDrawTab.Size = new System.Drawing.Size(756, 93);
+            this.treeDrawTab.TabIndex = 2;
+            this.treeDrawTab.Text = "Tree Draw Test";
+            this.treeDrawTab.UseVisualStyleBackColor = true;
+            // 
+            // generateTreeButton
+            // 
+            this.generateTreeButton.Location = new System.Drawing.Point(10, 7);
+            this.generateTreeButton.Name = "generateTreeButton";
+            this.generateTreeButton.Size = new System.Drawing.Size(100, 23);
+            this.generateTreeButton.TabIndex = 0;
+            this.generateTreeButton.Text = "Generate Tree";
+            this.generateTreeButton.UseVisualStyleBackColor = true;
+            this.generateTreeButton.Click += new System.EventHandler(this.generateTreeButton_Click);
             // 
             // statusBar
             // 
@@ -390,27 +412,6 @@ namespace booleanTestInterface {
             this.evaluateTab.Text = "Evaluate";
             this.evaluateTab.UseVisualStyleBackColor = true;
             // 
-            // treeDrawTab
-            // 
-            this.treeDrawTab.Controls.Add(this.generateTreeButton);
-            this.treeDrawTab.Location = new System.Drawing.Point(4, 22);
-            this.treeDrawTab.Name = "treeDrawTab";
-            this.treeDrawTab.Padding = new System.Windows.Forms.Padding(3);
-            this.treeDrawTab.Size = new System.Drawing.Size(756, 93);
-            this.treeDrawTab.TabIndex = 2;
-            this.treeDrawTab.Text = "Tree Draw Test";
-            this.treeDrawTab.UseVisualStyleBackColor = true;
-            // 
-            // generateTreeButton
-            // 
-            this.generateTreeButton.Location = new System.Drawing.Point(10, 7);
-            this.generateTreeButton.Name = "generateTreeButton";
-            this.generateTreeButton.Size = new System.Drawing.Size(100, 23);
-            this.generateTreeButton.TabIndex = 0;
-            this.generateTreeButton.Text = "Generate Tree";
-            this.generateTreeButton.UseVisualStyleBackColor = true;
-            this.generateTreeButton.Click += new System.EventHandler(this.generateTreeButton_Click);
-            // 
             // gaTestInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -427,6 +428,7 @@ namespace booleanTestInterface {
             this.manualTab.PerformLayout();
             this.autoTab.ResumeLayout(false);
             this.autoTab.PerformLayout();
+            this.treeDrawTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.interfaceErrorProvider)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.processTab.ResumeLayout(false);
@@ -435,7 +437,6 @@ namespace booleanTestInterface {
             this.parseTab.ResumeLayout(false);
             this.parseTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treePB)).EndInit();
-            this.treeDrawTab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
