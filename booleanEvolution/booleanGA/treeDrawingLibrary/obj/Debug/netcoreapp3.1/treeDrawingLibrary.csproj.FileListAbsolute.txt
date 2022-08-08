@@ -1,0 +1,10 @@
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanGA\treeDrawingLibrary\bin\Debug\netcoreapp3.1\treeDrawingLibrary.deps.json
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanGA\treeDrawingLibrary\bin\Debug\netcoreapp3.1\treeDrawingLibrary.dll
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanGA\treeDrawingLibrary\bin\Debug\netcoreapp3.1\treeDrawingLibrary.pdb
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanGA\treeDrawingLibrary\obj\Debug\netcoreapp3.1\treeDrawingLibrary.csproj.AssemblyReference.cache
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanGA\treeDrawingLibrary\obj\Debug\netcoreapp3.1\treeDrawingLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanGA\treeDrawingLibrary\obj\Debug\netcoreapp3.1\treeDrawingLibrary.AssemblyInfoInputs.cache
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanGA\treeDrawingLibrary\obj\Debug\netcoreapp3.1\treeDrawingLibrary.AssemblyInfo.cs
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanGA\treeDrawingLibrary\obj\Debug\netcoreapp3.1\treeDrawingLibrary.csproj.CoreCompileInputs.cache
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanGA\treeDrawingLibrary\obj\Debug\netcoreapp3.1\treeDrawingLibrary.dll
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanGA\treeDrawingLibrary\obj\Debug\netcoreapp3.1\treeDrawingLibrary.pdb
