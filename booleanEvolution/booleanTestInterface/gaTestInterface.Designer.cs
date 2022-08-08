@@ -58,6 +58,8 @@ namespace booleanTestInterface {
             this.label7 = new System.Windows.Forms.Label();
             this.parseButton = new System.Windows.Forms.Button();
             this.evaluateTab = new System.Windows.Forms.TabPage();
+            this.treeDrawTab = new System.Windows.Forms.TabPage();
+            this.generateTreeButton = new System.Windows.Forms.Button();
             this.inputGB.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.manualTab.SuspendLayout();
@@ -68,6 +70,7 @@ namespace booleanTestInterface {
             this.lexTab.SuspendLayout();
             this.parseTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treePB)).BeginInit();
+            this.treeDrawTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // inputGB
@@ -95,6 +98,7 @@ namespace booleanTestInterface {
             // 
             this.tabControl1.Controls.Add(this.manualTab);
             this.tabControl1.Controls.Add(this.autoTab);
+            this.tabControl1.Controls.Add(this.treeDrawTab);
             this.tabControl1.Location = new System.Drawing.Point(6, 19);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -386,6 +390,27 @@ namespace booleanTestInterface {
             this.evaluateTab.Text = "Evaluate";
             this.evaluateTab.UseVisualStyleBackColor = true;
             // 
+            // treeDrawTab
+            // 
+            this.treeDrawTab.Controls.Add(this.generateTreeButton);
+            this.treeDrawTab.Location = new System.Drawing.Point(4, 22);
+            this.treeDrawTab.Name = "treeDrawTab";
+            this.treeDrawTab.Padding = new System.Windows.Forms.Padding(3);
+            this.treeDrawTab.Size = new System.Drawing.Size(756, 93);
+            this.treeDrawTab.TabIndex = 2;
+            this.treeDrawTab.Text = "Tree Draw Test";
+            this.treeDrawTab.UseVisualStyleBackColor = true;
+            // 
+            // generateTreeButton
+            // 
+            this.generateTreeButton.Location = new System.Drawing.Point(10, 7);
+            this.generateTreeButton.Name = "generateTreeButton";
+            this.generateTreeButton.Size = new System.Drawing.Size(100, 23);
+            this.generateTreeButton.TabIndex = 0;
+            this.generateTreeButton.Text = "Generate Tree";
+            this.generateTreeButton.UseVisualStyleBackColor = true;
+            this.generateTreeButton.Click += new System.EventHandler(this.generateTreeButton_Click);
+            // 
             // gaTestInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,6 +435,7 @@ namespace booleanTestInterface {
             this.parseTab.ResumeLayout(false);
             this.parseTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treePB)).EndInit();
+            this.treeDrawTab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,6 +477,8 @@ namespace booleanTestInterface {
         private System.Windows.Forms.Button parseButton;
         private System.Windows.Forms.PictureBox treePB;
         private System.Windows.Forms.ListBox astLB;
+        private System.Windows.Forms.TabPage treeDrawTab;
+        private System.Windows.Forms.Button generateTreeButton;
     }
 }
 

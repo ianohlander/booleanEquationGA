@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>booleanTestInterface</RootNamespace>
     <AssemblyName>booleanTestInterface</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -78,6 +79,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -94,6 +96,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\booleanGA\treeDrawingLibrary\treeDrawingLibrary.csproj">
+      <Project>{4aad6230-1b9f-46d6-8687-f8228e57b62a}</Project>
+      <Name>treeDrawingLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\geneticInformationSystem\geneticInformationSystem.csproj">
       <Project>{f95e2a02-b865-411b-bb67-bd9e12885cdd}</Project>
       <Name>geneticInformationSystem</Name>

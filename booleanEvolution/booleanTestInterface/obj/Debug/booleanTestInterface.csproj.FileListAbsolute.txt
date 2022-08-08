@@ -40,3 +40,5 @@ C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\re
 C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanTestInterface\obj\Debug\booleanTestInterface.csproj.CopyComplete
 C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanTestInterface\obj\Debug\booleanTestInterface.exe
 C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanTestInterface\obj\Debug\booleanTestInterface.pdb
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanTestInterface\bin\Debug\treeDrawingLibrary.dll
+C:\Users\ianoh\OneDrive - City of Phoenix\onedrive\OneDrive - City of Phoenix\repos\boolean_equation_repo\booleanEvolution\booleanTestInterface\bin\Debug\treeDrawingLibrary.pdb

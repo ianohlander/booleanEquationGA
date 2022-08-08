@@ -20,6 +20,8 @@ using geneticInformationSystem.modules;
 
 using giSystemUtilities;
 
+using treeDrawingLibrary;
+
 namespace booleanTestInterface {
     public partial class gaTestInterface : Form {
         private BooleanPhenotype phenotype;
@@ -171,6 +173,10 @@ namespace booleanTestInterface {
                 Bitmap treePic = mgt.generateTreeFromExpr(phenotype.expressedASTs[index], "Tree " + index, treePB.Width, treePB.Height);
                 treePB.Image = treePic;
             }
+        }
+
+        private void generateTreeButton_Click(object sender, EventArgs e) {
+
         }
     }
 }

@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "gAIH70F9J+/8SPPkz1850yOPnN5uu/JqaI6U3Z/kc87/Atssgaawl20vrhVCC1KJu+bxHJrMQBbumGPBDXqCoQ==",
+  "dgSpecHash": "15CvBHZvEhzsFlAFcAg1TxfRDyL72pv0LyKBcPzIlk6G38YMSVbtg6E3xGMetnnu11Nf6ul/LrYf6GXsdvIS2g==",
   "success": true,
   "projectFilePath": "C:\\Users\\ianoh\\OneDrive - City of Phoenix\\onedrive\\OneDrive - City of Phoenix\\repos\\boolean_equation_repo\\booleanEvolution\\booleanGA\\treeDrawingLibrary\\treeDrawingLibrary.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ianoh\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\ianoh\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
