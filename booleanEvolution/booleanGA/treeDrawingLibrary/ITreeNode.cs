@@ -28,5 +28,12 @@ namespace treeDrawingLibrary {
 
         string getLabelText();
 
+        List<ITreeNode<T>> getChildren();
+
+        float getWidth();
+        void setWidth(float width);
+
+        float getHeight();
+        void setHeight(float height);
     }
 }

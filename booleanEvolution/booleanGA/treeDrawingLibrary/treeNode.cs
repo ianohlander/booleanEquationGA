@@ -13,6 +13,8 @@ namespace treeDrawingLibrary {
         private string type;
         private string label;
         private T value;
+        private float width;
+        private float height;
 
         public treeNode(treeNode<T> left, treeNode<T> right, treeNode<T> parent, T value) {
             this.leftNode = left;
@@ -118,6 +120,40 @@ namespace treeDrawingLibrary {
 
         public string getLabelText() {
             return label;
+        }
+
+        public int getNumberOfChildren() {
+            int children = 0;
+            if (leftNode != null) {
+                children++;
+            }
+            if (rightNode != null) {
+                children++;
+            }
+            return children;
+        }
+
+        public List<ITreeNode<T>> getChildren() {
+            List<ITreeNode<T>> children = new List<ITreeNode<T>>();
+            children.Add(leftNode);
+            children.Add(rightNode); 
+            return children;
+        }
+
+        public float getWidth() {
+            return width;
+        }
+
+        public void setWidth(float _width) {
+            width=_width;
+        }
+
+        public float getHeight() {
+            return height;
+        }
+
+        public void setHeight(float _height) {
+            height=_height;
         }
     }
 }
