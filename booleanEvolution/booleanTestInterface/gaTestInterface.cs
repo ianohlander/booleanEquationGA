@@ -26,13 +26,13 @@ namespace booleanTestInterface {
     public partial class gaTestInterface : Form {
         private BooleanPhenotype phenotype;
         generateTree mgt;
-        treeGenerator treegen;
+        TreeGenerator treegen;
 
 
         public gaTestInterface() {
             InitializeComponent();
             mgt = new generateTree();
-            treegen = new treeGenerator();
+            treegen = new TreeGenerator();
         }
 
         private void pfConvert_Click(object sender, EventArgs e) {

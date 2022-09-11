@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace treeDrawingLibrary {
-    public class treeGenerator {
+    public class TreeGenerator {
 
         public void InitializeNodes<T>(ITreeNode<T> node) {
             TreeHelpers.InitializeNodes(node, 0);
