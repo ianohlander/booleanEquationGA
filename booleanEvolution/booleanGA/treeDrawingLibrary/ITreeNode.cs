@@ -4,36 +4,36 @@ using System.Text;
 
 namespace treeDrawingLibrary {
     public interface ITreeNode<T> {
-        bool isLeaf();
-        bool isLeftNode();
-        ITreeNode<T> getRightNode();
-        ITreeNode<T> getLeftNode();
-        ITreeNode<T> getParentNode();
-        void setParentNode(ITreeNode<T> parentNode);
-        void setLeftNode(ITreeNode<T> leftNode);  
-        void setRightNode(ITreeNode<T> rightNode); 
-        void setValue(T value);
-        T getValue();
-        float getX();
-        void setX(float x);   
-        int getY();     
-        void setY(int y);
-        float getMod();
-        void setMod(float mod);  
+        bool IsLeaf();
+        bool IsLeftNode();
+        ITreeNode<T> GetRightNode();
+        ITreeNode<T> GetLeftNode();
+        ITreeNode<T> GetParentNode();
+        void SetParentNode(ITreeNode<T> parentNode);
+        void SetLeftNode(ITreeNode<T> leftNode);  
+        void SetRightNode(ITreeNode<T> rightNode); 
+        void SetValue(T value);
+        T GetValue();
+        float GetX();
+        void SetX(float x);   
+        int GetY();     
+        void SetY(int y);
+        float GetMod();
+        void SetMod(float mod);  
 
-        void setType(string type);
-        string getType();  
+        void SetType(string type);
+        string GetType();  
 
-        void setLabelText(string label);
+        void SetLabelText(string label);
 
-        string getLabelText();
+        string GetLabelText();
 
-        List<ITreeNode<T>> getChildren();
+        List<ITreeNode<T>> GetChildren();
 
-        float getWidth();
-        void setWidth(float width);
+        float GetWidth();
+        void SetWidth(float width);
 
-        float getHeight();
-        void setHeight(float height);
+        float GetHeight();
+        void SetHeight(float height);
     }
 }

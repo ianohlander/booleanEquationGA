@@ -6,36 +6,36 @@ using System.Threading.Tasks;
 
 using geneticInformationSystem.models.parsing;
 namespace geneticInformationSystem.modules {
-    public class ASTPrinter : Expr.Visitor<String> {
-        public String print(Expr expr) {
-            return expr.accept(this);
+    public class ASTPrinter : Expr.IVisitor<String> {
+        public String Print(Expr expr) {
+            return expr.Accept(this);
         }
 
-        public  String visitBinaryExpr(Expr.Binary expr) {
-            return parenthesize(expr.op.lexeme,
+        public  String VisitBinaryExpr(Expr.Binary expr) {
+            return Parenthesize(expr.op.lexeme,
                                 expr.left, expr.right);
         }
 
-        public  String visitGroupingExpr(Expr.Grouping expr) {
-            return parenthesize("group", expr.expression);
+        public  String VisitGroupingExpr(Expr.Grouping expr) {
+            return Parenthesize("group", expr.expression);
         }
 
-        public  String visitLiteralExpr(Expr.Literal expr) {
+        public  String VisitLiteralExpr(Expr.Literal expr) {
             if (expr.value == null) return "nil";
             return expr.value.ToString();
         }
 
-        public  String visitUnaryExpr(Expr.Unary expr) {
-            return parenthesize(expr.op.lexeme, expr.right);
+        public  String VisitUnaryExpr(Expr.Unary expr) {
+            return Parenthesize(expr.op.lexeme, expr.right);
         }
 
-        private String parenthesize(String name, params Expr[] exprs) {
+        private String Parenthesize(String name, params Expr[] exprs) {
             StringBuilder builder = new StringBuilder();
 
             builder.Append("(").Append(name);
             foreach (Expr expr in exprs) {
                 builder.Append(" ");
-                builder.Append(expr.accept(this));
+                builder.Append(expr.Accept(this));
             }
             builder.Append(")");
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace treeDrawingLibrary {
-    public class treeNode<T> : ITreeNode<T> {
+    public class TreeNode<T> : ITreeNode<T> {
         private ITreeNode<T> leftNode;
         private ITreeNode<T> rightNode;
         private ITreeNode<T> parentNode;
@@ -16,25 +16,25 @@ namespace treeDrawingLibrary {
         private float width;
         private float height;
 
-        public treeNode(treeNode<T> left, treeNode<T> right, treeNode<T> parent, T value) {
+        public TreeNode(TreeNode<T> left, TreeNode<T> right, TreeNode<T> parent, T value) {
             this.leftNode = left;
             this.rightNode = right;
             this.parentNode = parent;
             this.value = value;
         }
 
-        public treeNode() {
+        public TreeNode() {
 
         }
 
-        public void setValue(T _value) {
+        public void SetValue(T _value) {
             value = _value;
         }
-        public T getValue() {
+        public T GetValue() {
             return value;
         }
 
-        public ITreeNode<T> getLeftNode() {
+        public ITreeNode<T> GetLeftNode() {
             if (leftNode == null) {
                 return rightNode;
             }
@@ -43,86 +43,86 @@ namespace treeDrawingLibrary {
             }
         }
 
-        public float getMod() {
+        public float GetMod() {
             return mod;
         }
 
-        public ITreeNode<T> getParentNode() {
+        public ITreeNode<T> GetParentNode() {
             return parentNode;
         }
 
-        public ITreeNode<T> getRightNode() {
+        public ITreeNode<T> GetRightNode() {
             return rightNode;
         }
 
-        public string getType() {
+        public new string GetType() {
             return type;
         }
 
-        public float getX() {
+        public float GetX() {
             return x;
         }
 
-        public int getY() {
+        public int GetY() {
             return y;
         }
 
-        public bool isLeaf() {
+        public bool IsLeaf() {
             if (rightNode == null && leftNode == null) {
                 return true;
             }
             return false;
         }
 
-        public bool isLeftNode() {
+        public bool IsLeftNode() {
             //if this is root (no parent)
             //OR there is no left node while this is right node
             //OR this IS the left node
             //treat as left node
-            if (parentNode == null || parentNode.getLeftNode()==null || this == parentNode.getLeftNode()) {
+            if (parentNode == null || parentNode.GetLeftNode()==null || this == parentNode.GetLeftNode()) {
                 return true;
             }
             return false;
         }
 
 
-        public void setLeftNode(ITreeNode<T> _leftNode) {
+        public void SetLeftNode(ITreeNode<T> _leftNode) {
             leftNode = _leftNode;
         }
 
-        public void setMod(float _mod) {
+        public void SetMod(float _mod) {
             mod = _mod;
         }
 
-        public void setParentNode(ITreeNode<T> _parentNode) {
+        public void SetParentNode(ITreeNode<T> _parentNode) {
             parentNode = _parentNode;
         }
 
-        public void setRightNode(ITreeNode<T> _rightNode) {
+        public void SetRightNode(ITreeNode<T> _rightNode) {
             rightNode = _rightNode;
         }
 
-        public void setType(string _type) {
+        public void SetType(string _type) {
             type = _type;
         }
 
-        public void setX(float _x) {
+        public void SetX(float _x) {
             x = _x;
         }
 
-        public void setY(int _y) {
+        public void SetY(int _y) {
             y = _y;
         }
 
-        public void setLabelText(string _label) {
+        public void SetLabelText(string _label) {
             label = _label;
         }
 
-        public string getLabelText() {
+        public string GetLabelText() {
             return label;
         }
 
-        public int getNumberOfChildren() {
+        public int GetNumberOfChildren() {
             int children = 0;
             if (leftNode != null) {
                 children++;
@@ -133,26 +133,27 @@ namespace treeDrawingLibrary {
             return children;
         }
 
-        public List<ITreeNode<T>> getChildren() {
-            List<ITreeNode<T>> children = new List<ITreeNode<T>>();
-            children.Add(leftNode);
-            children.Add(rightNode); 
+        public List<ITreeNode<T>> GetChildren() {
+            List<ITreeNode<T>> children = new List<ITreeNode<T>> {
+                leftNode,
+                rightNode
+            };
             return children;
         }
 
-        public float getWidth() {
+        public float GetWidth() {
             return width;
         }
 
-        public void setWidth(float _width) {
+        public void SetWidth(float _width) {
             width=_width;
         }
 
-        public float getHeight() {
+        public float GetHeight() {
             return height;
         }
 
-        public void setHeight(float _height) {
+        public void SetHeight(float _height) {
             height=_height;
         }
     }

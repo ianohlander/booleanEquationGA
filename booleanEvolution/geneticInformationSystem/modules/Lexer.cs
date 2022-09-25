@@ -11,12 +11,12 @@ namespace geneticInformationSystem.modules {
     public class Lexer {
         private String source;
         public List<Token> tokens = new List<Token>();
-        private giSystem gis;
+        private GISystem gis;
         private int start = 0;
         private int current = 0;
         private int line = 1;
 
-        public Lexer(String source, giSystem myGIS) {
+        public Lexer(String source, GISystem myGIS) {
             this.source = source;
             this.gis = myGIS;
         }
@@ -70,7 +70,7 @@ namespace geneticInformationSystem.modules {
                         addToken(TokenType.LITERAL, c);
                     }
                     else {
-                        gis.error(line, "Unexpected character.");
+                        gis.Error(line, "Unexpected character.");
                     }
                     break;
             }

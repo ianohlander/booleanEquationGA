@@ -12,33 +12,33 @@ using geneticInformationSystem.models.parsing;
 using geneticInformationSystem.modules;
 
 namespace geneticInformationSystem {
-    public class giSystem {
+    public class GISystem {
         private bool hadError = false;
 
         public static void Main(string[] args) {
-            giSystem gs = new giSystem();
+            GISystem gs = new GISystem();
             if (args.Length > 2 || args.Length ==0){
                 Console.WriteLine("giSystem: lexer [script]");
                 Environment.Exit(0);
             }
             if (args.Length == 2) {
                 if (args[0].Equals("lexer")) {
-                    gs.lexFile(args[1]);
+                    gs.LexFile(args[1]);
                 }
             }
             if (args.Length == 1) {
                 if (args[0].Equals("lexer")) {
-                    gs.lexPrompt();
+                    gs.LexPrompt();
                 }
             }
             
         }
 
-        private void lexFile(String path){
-            string data = null;
+        private void LexFile(String path){
+            string data;
             try {
                 data= System.IO.File.ReadAllText(path);
-                lex(data);
+                Lex(data);
                 if (hadError) Environment.Exit(0);
             }
             catch(Exception ex) {
@@ -47,7 +47,7 @@ namespace geneticInformationSystem {
             }
         }
 
-        private void lexPrompt(){
+        private void LexPrompt(){
             int len;
             int numInputs;
             double border;
@@ -63,50 +63,51 @@ namespace geneticInformationSystem {
                     border = double.Parse(t[1]);
                     numInputs = int.Parse(t[2]);
                     DNAGen = new DNAGenerator(len, border, numInputs);
+
                     //convert from infix to postfix 
-                    //string infix=infixToPostfix(line);
+                    //string infix=InfixToPostfix(line);
                     //Console.WriteLine("Infix to postfix: " + infix);
 
-                    BooleanPhenotype phenotype = new BooleanPhenotype();
-                    phenotype.inputs = numInputs;
-                    phenotype.dna = DNAGen.generateDNA(); ;
+                    // dotnet_style_object_initializer = false
+                    BooleanPhenotype phenotype = new BooleanPhenotype {
+                        Inputs = numInputs,
+                        DNA = DNAGen.generateDNA()
+                    };
+                    //Lex
+                    phenotype.DNATokens= Lex(phenotype.DNA);
+                    //Parse
+                    phenotype.ExpressedASTs = Parse(phenotype.DNATokens);
 
-                    //lex
-                    phenotype.dnatokens= lex(phenotype.dna);
-
-                    //parse
-                    phenotype.expressedASTs = parse(phenotype.dnatokens);
-
-                    //print
+                    //Print
                     Console.WriteLine("Found Trees:");
                     int i = 1;
-                    foreach (Expr exp in phenotype.expressedASTs) {
+                    foreach (Expr exp in phenotype.ExpressedASTs) {
                         Console.WriteLine("Tree "+i++);
-                        Console.WriteLine(new ASTPrinter().print(exp));
-                        Console.WriteLine(ASTDisplay.print2D(exp, false));
+                        Console.WriteLine(new ASTPrinter().Print(exp));
+                        Console.WriteLine(ASTDisplay.Print2D(exp, false));
                     }
 
                     //covert from postfix to infix
-                    /*string postfix = postfixToInfix(infix);
+                    /*string postfix = PostfixToInfix(infix);
                     Console.WriteLine("Postfix to Infix: " + postfix);*/
                     hadError = false;
                 }
             }
         }
 
-        public List<Token> lex(string source) {
+        public List<Token> Lex(string source) {
             Console.WriteLine("In lexer with: "+source);
             Lexer lexer = new Lexer(source, this);
             List<Token> tokens = lexer.scanTokens();
 
-            // For now, just print the tokens.
+            // For now, just Print the tokens.
             foreach (Token token in tokens) {
-                Console.WriteLine(token.toString());
+                Console.WriteLine(token.ToString());
             }
             return tokens;
         }
 
-        public List<Expr> parse(List<Token> tokens) {
+        public List<Expr> Parse(List<Token> tokens) {
             Console.WriteLine("In parser");
             Parser parser = new Parser(tokens, this);
             List<Expr> exp = parser.parse();
@@ -114,27 +115,27 @@ namespace geneticInformationSystem {
             return exp;
         }
 
-        public void error(int line, String message) {
-            report(line, "", message);
+        public void Error(int line, String message) {
+            Report(line, "", message);
         }
 
-        private void report(int line, String where, String message) {
+        private void Report(int line, String where, String message) {
             Console.WriteLine(
                 "[line " + line + "] Error" + where + ": " + message);
             hadError = true;
         }
 
-        public void error(Token token, String message) {
+        public void Error(Token token, String message) {
             if (token.type == TokenType.EOF) {
-                report(token.line, " at end", message);
+                Report(token.line, " at end", message);
             }
             else {
-                report(token.line, " at '" + token.lexeme + "'", message);
+                Report(token.line, " at '" + token.lexeme + "'", message);
             }
         }
 
-        //boolean precedence calculation
-        private int precedence(char op) {
+        //boolean Precedence calculation
+        private int Precedence(char op) {
             if (op == '!')
                 return 3;
             else if (op == '*')
@@ -144,7 +145,7 @@ namespace geneticInformationSystem {
             else return -1;
         }
 
-        public bool infixToPostfix(string expn, out string strResult, out string errMess, out int numinputs) {
+        public bool InfixToPostfix(string expn, out string strResult, out string errMess, out int numinputs) {
             Stack<char> stk = new Stack<char>();
             string output = null;
             strResult = null;
@@ -158,7 +159,7 @@ namespace geneticInformationSystem {
                     bool isAlphaBet = Regex.IsMatch(ch.ToString(), "[A-Za-z]", RegexOptions.IgnoreCase);
 
                     if (isAlphaBet) {
-                        output = output + ch;
+                        output +=  ch;
                         inputs.Add(ch);
                     }
                     else {
@@ -169,10 +170,10 @@ namespace geneticInformationSystem {
                             case '/':
                             case '%':
                             case '!':
-                                while (stk.Count > 0 && precedence(ch) <= precedence(stk.Peek())) {
+                                while (stk.Count > 0 && Precedence(ch) <= Precedence(stk.Peek())) {
                                     _out = stk.Peek();
                                     stk.Pop();
-                                    output = output + _out;
+                                    output += _out;
                                 }
                                 stk.Push(ch);
                                 //output = output;
@@ -183,7 +184,7 @@ namespace geneticInformationSystem {
                             case ')':
                                 while (stk.Count > 0 && (_out = stk.Peek()) != '(') {
                                     stk.Pop();
-                                    output = output + _out;
+                                    output += _out;
                                 }
                                 if (stk.Count > 0 && (_out = stk.Peek()) == '(')
                                     stk.Pop();
@@ -194,7 +195,7 @@ namespace geneticInformationSystem {
                 while (stk.Count > 0) {
                     _out = stk.Peek();
                     stk.Pop();
-                    output = output + _out;
+                    output += _out;
                 }
                 strResult = output;
                 numinputs = inputs.Count;
@@ -206,12 +207,12 @@ namespace geneticInformationSystem {
             return result;
         }
 
-        private Boolean isOperand(char x) {
+        private Boolean IsOperand(char x) {
             return (x >= 'a' && x <= 'z') ||
                     (x >= 'A' && x <= 'Z');
         }
 
-        public bool postfixToInfix(String exp, out string strResult, out string errMess) {
+        public bool PostfixToInfix(String exp, out string strResult, out string errMess) {
             Stack s = new Stack();
             strResult = null;
             errMess = null;
@@ -220,7 +221,7 @@ namespace geneticInformationSystem {
                 for (int i = 0; i < exp.Length; i++) {
                     char c = exp[i];
                     // Push operands
-                    if (isOperand(c)) {
+                    if (IsOperand(c)) {
                         s.Push(c.ToString());
                     }
 

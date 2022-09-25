@@ -463,7 +463,7 @@ namespace booleanTestInterface {
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox lengthTB;
 
-        private giSystem gisystem = new giSystem();
+        private GISystem gisystem = new GISystem();
         private System.Windows.Forms.ErrorProvider interfaceErrorProvider;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.GroupBox groupBox1;

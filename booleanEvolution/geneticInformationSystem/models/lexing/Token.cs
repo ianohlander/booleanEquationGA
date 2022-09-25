@@ -18,7 +18,7 @@ namespace geneticInformationSystem.models.lexing {
             this.line = line;
         }
 
-        public String toString() {
+        public override String ToString() {
             return type + " " + lexeme + " " + literal;
         }
     }

@@ -7,9 +7,9 @@ namespace treeDrawingLibrary {
 
         public void InitializeNodes<T>(ITreeNode<T> node) {
             TreeHelpers.InitializeNodes(node, 0);
-            TreeHelpers.initialAssignXMod(node);
+            TreeHelpers.InitialAssignXMod(node);
             // ensure no node is being drawn off screen
-            TreeHelpers.allOnscreenCheckAdjustment(node);
+            TreeHelpers.AllOnscreenCheckAdjustment(node);
 
             // assign final X values to nodes
             TreeHelpers.CalculateFinalPositions(node, 0);

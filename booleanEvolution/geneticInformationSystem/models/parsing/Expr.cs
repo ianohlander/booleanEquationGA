@@ -5,11 +5,11 @@ using geneticInformationSystem.models.lexing;
 namespace geneticInformationSystem.models.parsing {
 
     public abstract class Expr {
-        public interface Visitor<T> {
-            T visitBinaryExpr(Binary expr);
-            T visitGroupingExpr(Grouping expr);
-            T visitLiteralExpr(Literal expr);
-            T visitUnaryExpr(Unary expr);
+        public interface IVisitor<T> {
+            T VisitBinaryExpr(Binary expr);
+            T VisitGroupingExpr(Grouping expr);
+            T VisitLiteralExpr(Literal expr);
+            T VisitUnaryExpr(Unary expr);
         }
         public  class Binary : Expr {
             public Binary(Expr left, Token op, Expr right) {
@@ -19,13 +19,13 @@ namespace geneticInformationSystem.models.parsing {
                 this.value = op.lexeme;
             }
 
-            public override T accept<T>(Visitor<T> visitor) {
-                return visitor.visitBinaryExpr(this);
+            public override T Accept<T>(IVisitor<T> visitor) {
+                return visitor.VisitBinaryExpr(this);
             }
 
-            public override Object getLeaf() {
+            public override Object GetLeaf() {
                 Object obj = null;
-                if(this.right.getLeaf()!=null && this.left.getLeaf() != null) {
+                if(this.right.GetLeaf()!=null && this.left.GetLeaf() != null) {
                     obj = new Object();
                 }
                 return obj;
@@ -37,13 +37,13 @@ namespace geneticInformationSystem.models.parsing {
                 this.expression = expression;
             }
 
-            public override T accept<T>(Visitor<T> visitor) {
-                return visitor.visitGroupingExpr(this);
+            public override T Accept<T>(IVisitor<T> visitor) {
+                return visitor.VisitGroupingExpr(this);
             }
 
             public Expr expression;
-            public override Object getLeaf() {
-                return this.expression.getLeaf();
+            public override Object GetLeaf() {
+                return this.expression.GetLeaf();
             }
         }
         public class Literal : Expr {
@@ -52,11 +52,11 @@ namespace geneticInformationSystem.models.parsing {
                 this.op = token;
             }
 
-            public override T accept<T>(Visitor<T> visitor) {
-                return visitor.visitLiteralExpr(this);
+            public override T Accept<T>(IVisitor<T> visitor) {
+                return visitor.VisitLiteralExpr(this);
             }
 
-            public override Object getLeaf() {
+            public override Object GetLeaf() {
                 return this.value;
             }
         }
@@ -67,17 +67,17 @@ namespace geneticInformationSystem.models.parsing {
                 this.value = op.lexeme;
             }
 
-            public override T accept<T>(Visitor<T> visitor) {
-                return visitor.visitUnaryExpr(this);
+            public override T Accept<T>(IVisitor<T> visitor) {
+                return visitor.VisitUnaryExpr(this);
             }
 
-            public override Object getLeaf() {
-                return this.right.getLeaf();
+            public override Object GetLeaf() {
+                return this.right.GetLeaf();
             }
         }
 
-        public abstract Object getLeaf();
-        public abstract T accept<T>(Visitor<T> visitor);
+        public abstract Object GetLeaf();
+        public abstract T Accept<T>(IVisitor<T> visitor);
         public Expr parent;
         public Expr left;
         public Token op;

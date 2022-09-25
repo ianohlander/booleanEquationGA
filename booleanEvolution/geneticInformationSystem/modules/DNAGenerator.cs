@@ -17,7 +17,7 @@ namespace geneticInformationSystem.modules {
                 return numInputs; 
             } 
             set {
-                //cannot have more than a-z as inputs
+                //cannot have more than a-z as Inputs
                 if (value < 27) {
                     numInputs = value;
                     inputBases = new string[numInputs];

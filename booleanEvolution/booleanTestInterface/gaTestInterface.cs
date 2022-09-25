@@ -25,13 +25,13 @@ using treeDrawingLibrary;
 namespace booleanTestInterface {
     public partial class gaTestInterface : Form {
         private BooleanPhenotype phenotype;
-        generateTree mgt;
+        GenerateTree mgt;
         TreeGenerator treegen;
 
 
         public gaTestInterface() {
             InitializeComponent();
-            mgt = new generateTree();
+            mgt = new GenerateTree();
             treegen = new TreeGenerator();
         }
 
@@ -40,12 +40,12 @@ namespace booleanTestInterface {
                 string errMessage = null;
                 string pf = null;
                 int numinputs;
-                if (gisystem.infixToPostfix(infixTB.Text,out pf,out errMessage, out numinputs)) {
+                if (gisystem.InfixToPostfix(infixTB.Text,out pf,out errMessage, out numinputs)) {
                     this.statusBar.Text = "";
                     postfixTB.Text = pf;
                     phenotype = new BooleanPhenotype();
-                    phenotype.dna = pf;
-                    phenotype.inputs = numinputs;
+                    phenotype.DNA = pf;
+                    phenotype.Inputs = numinputs;
                 }
                 else {
                     this.statusBar.Text = "Error converting to postfix.";
@@ -98,10 +98,10 @@ namespace booleanTestInterface {
                 DNAGenerator DNAGen = new DNAGenerator(len, border, numInputs);
 
                 phenotype = new BooleanPhenotype();
-                phenotype.inputs = numInputs;
-                phenotype.dna = DNAGen.generateDNA();
+                phenotype.Inputs = numInputs;
+                phenotype.DNA = DNAGen.generateDNA();
 
-                generatedDNATB.Text = phenotype.dna;
+                generatedDNATB.Text = phenotype.DNA;
             }
         }
 
@@ -112,19 +112,21 @@ namespace booleanTestInterface {
         private void clear() {
             generatedDNATB.Text = "";
             postfixTB.Text = "";
-            infixTB.Text = "";
+            infixTB.Text = "(!x * y) + (x * !y)";
             phenotype = null;
             lexTB.Text = null;
+            astLB.Items.Clear();
+            treePB.Image = null;
         }
 
         private void lexButton_Click(object sender, EventArgs e) {
-            if (phenotype != null && !string.IsNullOrEmpty(phenotype.dna)) {
-                Lexer lexer = new Lexer(phenotype.dna, gisystem);
-                phenotype.dnatokens = lexer.scanTokens();
+            if (phenotype != null && !string.IsNullOrEmpty(phenotype.DNA)) {
+                Lexer lexer = new Lexer(phenotype.DNA, gisystem);
+                phenotype.DNATokens = lexer.scanTokens();
                 StringBuilder tokenString = new StringBuilder();
-                // For now, just print the tokens.
-                foreach (Token token in phenotype.dnatokens) {
-                    tokenString.AppendLine(token.toString());
+                // Just Print the tokens.
+                foreach (Token token in phenotype.DNATokens) {
+                    tokenString.AppendLine(token.ToString());
                 }
                 lexTB.Text = tokenString.ToString();
 
@@ -135,31 +137,18 @@ namespace booleanTestInterface {
         }
 
         private void parseButton_Click(object sender, EventArgs e) {
-            if (phenotype != null && phenotype.dnatokens!=null) {
-                Parser parser = new Parser(phenotype.dnatokens, gisystem);
-                phenotype.expressedASTs= parser.parse();
-                //StringBuilder astString = new StringBuilder();
-
-                //astString.AppendLine("Found Trees:");
-                mgt=new generateTree();
-                //int i = 0;
+            if (phenotype != null && phenotype.DNATokens!=null) {
+                Parser parser = new Parser(phenotype.DNATokens, gisystem);
+                phenotype.ExpressedASTs= parser.parse();
+                mgt=new GenerateTree();
                 string astname;
-                mgt = new generateTree();
+                mgt = new GenerateTree();
                 astLB.Items.Clear();
-                for (int i=0;i< phenotype.expressedASTs.Count;i++){
-                    Expr exp = phenotype.expressedASTs[i];
+                for (int i=0;i< phenotype.ExpressedASTs.Count;i++){
+                    Expr exp = phenotype.ExpressedASTs[i];
                     astname="Tree " + i;
-                    string astString = new ASTPrinter().print(exp);
-                    astLB.Items.Add(astname + ": "+astString);
-                    //astString.AppendLine(new ASTPrinter().print(exp));
-                    //astString.AppendLine(ASTDisplay.print2D(exp, true));;
-                    
-
-                    //Bitmap treePic = mgt.generateTreeFromExpr(exp, "Tree " + i, treePB.Width, treePB.Height);
-                    //treePB.Image = treePic;
-
-                    //astTB.Text=ASTDisplay.print2D(exp, true);
-                    //Debug.WriteLine(ASTDisplay.print2D(exp, true));
+                    string astString = new ASTPrinter().Print(exp);
+                    astLB.Items.Add(astname + ": "+astString);              
                 }
             }
             else {
@@ -171,7 +160,7 @@ namespace booleanTestInterface {
             int index = astLB.SelectedIndex;
             if (index != -1) {
                 //Bitmap treePic = mgt.generateSampleTreeImage(treePB.Width,treePB.Height);
-                Bitmap treePic = mgt.generateTreeFromExpr(phenotype.expressedASTs[index], "Tree " + index, treePB.Width, treePB.Height);
+                Bitmap treePic = mgt.GenerateMsaglTreeFromExpr(phenotype.ExpressedASTs[index], "Tree " + index, treePB.Width, treePB.Height);
                 treePB.Image = treePic;
             }
         }
@@ -179,9 +168,9 @@ namespace booleanTestInterface {
         private void generateTreeButton_Click(object sender, EventArgs e) {
             int index = astLB.SelectedIndex;
             if (index != -1) {
-                if (phenotype != null && phenotype.expressedASTs.Count > 0) {
-                    Expr root = phenotype.expressedASTs[index];
-                    treeNode<string> treeRoot = convertExprToTreeNode.convert(root, null);
+                if (phenotype != null && phenotype.ExpressedASTs.Count > 0) {
+                    Expr root = phenotype.ExpressedASTs[index];
+                    TreeNode<string> treeRoot = convertExprToTreeNode.convert(root, null);
 
                     treegen.InitializeNodes(treeRoot);
                 }

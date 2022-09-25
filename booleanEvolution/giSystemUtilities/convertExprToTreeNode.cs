@@ -14,22 +14,22 @@ namespace giSystemUtilities {
 
         }
 
-        public static treeNode<string> convert(Expr exprroot, treeNode<string> root) {
+        public static TreeNode<string> convert(Expr exprroot, TreeNode<string> root) {
             // Base case
             if (exprroot == null) {
                 return null;
             }
 
-            treeNode<string> node = new treeNode<string>();
+            TreeNode<string> node = new TreeNode<string>();
 
-            node.setValue(exprroot.value.ToString());
-            node.setParentNode(root);
-            node.setType(exprroot.op.type.ToString());
+            node.SetValue(exprroot.value.ToString());
+            node.SetParentNode(root);
+            node.SetType(exprroot.op.type.ToString());
 
-            treeNode<string> left = convert(exprroot.left, node);
-            treeNode<string> right = convert(exprroot.right, node);
-            node.setLeftNode(left);
-            node.setRightNode(right);
+            TreeNode<string> left = convert(exprroot.left, node);
+            TreeNode<string> right = convert(exprroot.right, node);
+            node.SetLeftNode(left);
+            node.SetRightNode(right);
 
             
 

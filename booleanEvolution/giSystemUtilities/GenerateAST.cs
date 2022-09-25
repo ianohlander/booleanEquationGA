@@ -16,13 +16,12 @@ namespace giSystemUtilities {
                 Console.WriteLine("Usage: generate_ast <output directory>");
                 Environment.Exit(0);
             }
-            String outputDir = args[0];
-            List<string> grammerDefition = new List<string>{
+
+            /*List<string> grammerDefition = new List<string>{
                 "Binary   : Expr left,Token op,Expr right",
                 "Grouping : Expr expression",
                 "Literal  : Object value",
-                "Unary    : Token op,Expr right"};
-            //defineAst(outputDir, "Expr", grammerDefition);
+                "Unary    : Token op,Expr right"};*/
 
 
             Expr expression = new Expr.Binary(
@@ -36,9 +35,9 @@ namespace giSystemUtilities {
                                     )
                                 );
 
-            Console.WriteLine(new ASTPrinter().print(expression));
+            Console.WriteLine(new ASTPrinter().Print(expression));
         }
-        private static void defineAst(String outputDir, String baseName, List<String> types) {
+        private static void DefineAst(String outputDir, String baseName, List<String> types) {
             String path = outputDir + "/" + baseName + ".cs";
             using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8)) {
 
@@ -52,15 +51,15 @@ namespace giSystemUtilities {
                 
                 writer.WriteLine("    public abstract class " + baseName + " {");
 
-                defineVisitor(writer, baseName, types);
+                DefineVisitor(writer, baseName, types);
 
                 foreach (String type in types) {
                     String className = type.Split(':')[0].Trim();
                     String fields = type.Split(':')[1].Trim();
-                    defineType(writer, baseName, className, fields);
+                    DefineType(writer, baseName, className, fields);
                 }
 
-                // The base accept() method.
+                // The base Accept() method.
                 writer.WriteLine();
                 writer.WriteLine("        public abstract T accept<T>(Visitor<T> visitor);");
 
@@ -69,7 +68,7 @@ namespace giSystemUtilities {
             }
         }    
 
-        private static void defineType(StreamWriter writer, String baseName,
+        private static void DefineType(StreamWriter writer, String baseName,
             String className, String fieldList) {
             writer.WriteLine("    public class " + className + " : " +
                 baseName + " {");
@@ -86,7 +85,7 @@ namespace giSystemUtilities {
 
             writer.WriteLine("        }");
 
-            // Visitor pattern.
+            // IVisitor pattern.
             writer.WriteLine();
             writer.WriteLine("        public override T accept<T>(Visitor<T> visitor) {");
             writer.WriteLine("          return visitor.visit" + className + baseName + "(this);");
@@ -101,7 +100,7 @@ namespace giSystemUtilities {
             writer.WriteLine("      }");
         }
 
-        private static void defineVisitor(StreamWriter writer, String baseName, List<String> types) {
+        private static void DefineVisitor(StreamWriter writer, String baseName, List<String> types) {
             writer.WriteLine("    public interface Visitor<T> {");
 
             foreach (String type in types) {

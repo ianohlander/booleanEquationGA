@@ -12,13 +12,13 @@ namespace geneticInformationSystem.modules {
         private class ParseError : Exception { }
         private  List<Token> tokens;
         private int current = 0;
-        private giSystem gis;
+        private GISystem gis;
         Stack<Expr> stack;
         List<Expr> resultTrees;
         private int expressionErrors;
         private int countLiteral = 0;
 
-        public Parser(List<Token> tokens, giSystem myGIS) {
+        public Parser(List<Token> tokens, GISystem myGIS) {
             this.tokens = tokens;
             this.gis = myGIS;
             stack = new Stack<Expr>();
@@ -111,7 +111,7 @@ namespace geneticInformationSystem.modules {
                 Expr first = stack.Pop();
                 Expr second = stack.Peek();
                 stack.Push(first);
-                if (first.getLeaf()!=null && second.getLeaf() != null) {
+                if (first.GetLeaf()!=null && second.GetLeaf() != null) {
                     result = true;
                 }
             }
@@ -122,7 +122,7 @@ namespace geneticInformationSystem.modules {
             bool result = false;
             if (stack.Count > 0) {
                 Expr first = stack.Peek();
-                if (first.getLeaf() != null) {
+                if (first.GetLeaf() != null) {
                     result = true;
                 }
             }
@@ -133,7 +133,7 @@ namespace geneticInformationSystem.modules {
             bool result = false;
             if (stack.Count > 0) {
                 Expr first = stack.Peek();
-                if (first.getLeaf() != null) {
+                if (first.GetLeaf() != null) {
                     result = true;
                 }
             }
@@ -174,7 +174,7 @@ namespace geneticInformationSystem.modules {
         }
 
         private ParseError error(Token token, String message) {
-            gis.error(token, message);
+            gis.Error(token, message);
             return new ParseError();
         }
     }
